@@ -1,0 +1,1 @@
+export const FETCH_CARD = 'CARDS/FETCH_CARD'

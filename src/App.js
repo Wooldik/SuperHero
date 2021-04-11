@@ -11,17 +11,18 @@ function App() {
 	useEffect(() => {
 		fetch(`https://superheroapi.com/api/2035975243210427/1`)
 			.then(data => data.json())
-			.then(({ data }) => {
-				console.log(data);
+			.then((data) => {
+
 				setState(data)
 			})
 
 	}, [])
-
+	console.log(state);
 	return (
 		<S.Wrapper>
 			<h1>Super Hero</h1>
-			{console.log(state)}
+			<img src={state.image.url} />
+
 
 		</S.Wrapper>
 	);
@@ -44,6 +45,10 @@ const S = {
 			padding: 50px 0;
 			font-size: 3rem;
 			
+		}
+		& img{
+			width:250px;
+			height:250px;
 		}
 		
 		
