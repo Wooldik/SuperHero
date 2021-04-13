@@ -1,56 +1,24 @@
-import { useState, useEffect } from 'react'
-
-import styled from 'styled-components'
+import React from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
+import FetchedPosts from './components/FetchedPosts'
+import Card from './components/Card'
 
 function App() {
 
-	const [state, setState] = useState([])
-
-
-
-	useEffect(() => {
-		fetch(`https://superheroapi.com/api/2035975243210427/1`)
-			.then(data => data.json())
-			.then((data) => {
-
-				setState(data)
-			})
-
-	}, [])
-	console.log(state);
 	return (
-		<S.Wrapper>
-			<h1>Super Hero</h1>
-			<img src={state.image.url} />
+		<div>
+			<BrowserRouter>
+				<h2>Super Heroes</h2>
+				<Route exact path='/' component={FetchedPosts} />
+				<Route path='/card/:id' render={({ location }) => {
+					return <Card data={location.state} />
+				}} />
+			</BrowserRouter>
 
-
-		</S.Wrapper>
+		</div>
 	);
 }
 
 export default App;
 
-const S = {
-	Wrapper: styled.div`
-		width:100%;
-		height:100vh;
-		padding:15px;
-		background: #000;
-		color:#fff;
-		font-size: 2rem;
-		
-		& h1{
-			display:flex;
-			justify-content:center;
-			padding: 50px 0;
-			font-size: 3rem;
-			
-		}
-		& img{
-			width:250px;
-			height:250px;
-		}
-		
-		
-	`
-}
+
