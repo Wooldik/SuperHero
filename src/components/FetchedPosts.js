@@ -17,10 +17,7 @@ export default () => {
 	}
 
 	if (!posts.length) {
-		return <button
-			className="btn btn-primary"
-			onClick={() => dispatch(fetchHeros())}
-		>Загрузить</button>
+		dispatch(fetchHeros())
 	}
 
 
