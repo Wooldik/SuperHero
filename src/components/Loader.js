@@ -1,7 +1,8 @@
 import React from 'react'
+import { classNameBootstrap } from '../constants'
 
 export const Loader = () => (
-  <div className="spinner-border text-danger" role="status">
-    <span className="sr-only">Loading...</span>
-  </div>
+	<div className={classNameBootstrap.spinner} role="status">
+		<span className={classNameBootstrap.fixed}>Loading...</span>
+	</div>
 )

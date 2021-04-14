@@ -8,3 +8,8 @@ export const routes = {
 	}
 
 }
+
+export const classNameBootstrap = {
+	spinner: "spinner-border text-danger",
+	fixed: "sr-only"
+}
