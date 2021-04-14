@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Post from './Post'
 import { fetchHeros } from '../redux/actions'
 import { Loader } from './Loader'
-import styled from 'styled-components'
+import { S } from './styledComponents'
 import { Link } from 'react-router-dom'
 import { getHeros, onLoading } from '../redux/selectors'
 import { routes } from '../constants'
@@ -22,22 +22,12 @@ export default () => {
 	return (
 		<S.Wrapper>
 			{posts.map(post =>
-				<Link to={{ pathname: routes.linkCardId(post), state: post }}>
-					<Post
-						post={post}
-						key={post.id}
-					/>
+				<Link to={{ pathname: routes.linkCardId(post), state: post }} key={post.id}>
+					<Post post={post} />
 				</Link>)}
 		</S.Wrapper>
 	)
 
 }
 
-const S = {
-	Wrapper: styled.div`
-	display:flex;
-	justify-content:space-between;
-	flex-wrap:wrap;
 
-	`
-}
