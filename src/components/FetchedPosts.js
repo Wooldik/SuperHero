@@ -11,14 +11,11 @@ export default () => {
 	const posts = useSelector(getHeros)
 	const loading = useSelector(onLoading)
 
-	if (loading) {
-		return <Loader />
-	}
+	if (loading) { return <Loader /> }
 
 	if (!posts.length) {
 		dispatch(fetchHeros())
 	}
-
 
 	return (
 		<S.Wrapper>
