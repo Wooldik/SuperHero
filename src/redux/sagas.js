@@ -1,20 +1,18 @@
 import { takeEvery, put, call } from 'redux-saga/effects'
-import { FETCH_HEROS, REQUEST_HEROS } from './types'
-import { hideLoader, showLoader } from './actions'
+import { hideLoaderAction, showLoaderAction, requestHerosAction, fetchHerosAction } from './actions'
 
 export function* sagaWatcher() {
-	yield takeEvery(REQUEST_HEROS, sagaWorker)
+	yield takeEvery(requestHerosAction, sagaWorker)
 }
 
 function* sagaWorker() {
 	try {
-		yield put(showLoader())
+		yield put(showLoaderAction())
 		const payload = yield call(fetchHeros)
-		yield put({ type: FETCH_HEROS, payload })
-		yield put(hideLoader())
-
+		yield put(fetchHerosAction(payload))
+		yield put(hideLoaderAction())
 	} catch (e) {
-		yield put(hideLoader())
+		yield put(hideLoaderAction())
 	}
 }
 

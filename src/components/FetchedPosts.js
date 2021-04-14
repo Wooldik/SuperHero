@@ -1,12 +1,12 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Post from './Post'
-import { fetchHeros } from '../redux/actions'
 import { Loader } from './Loader'
 import { S } from './styledComponents'
 import { Link } from 'react-router-dom'
 import { getHeros, onLoading } from '../redux/selectors'
 import { routes } from '../constants'
+import { requestHerosAction } from '../redux/actions'
 
 export default () => {
 	const dispatch = useDispatch()
@@ -16,7 +16,7 @@ export default () => {
 	if (loading) { return <Loader /> }
 
 	if (!posts.length) {
-		dispatch(fetchHeros())
+		dispatch(requestHerosAction())
 	}
 
 	return (
