@@ -6,6 +6,8 @@ import { Loader } from './Loader'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { getHeros, onLoading } from '../redux/selectors'
+import { routes } from '../constants'
+
 export default () => {
 	const dispatch = useDispatch()
 	const posts = useSelector(getHeros)
@@ -19,7 +21,13 @@ export default () => {
 
 	return (
 		<S.Wrapper>
-			{posts.map(post => <Link to={{ pathname: `/card/${post.id}`, state: post }}><Post post={post} key={post.id} /></Link>)}
+			{posts.map(post =>
+				<Link to={{ pathname: routes.linkCardId(post), state: post }}>
+					<Post
+						post={post}
+						key={post.id}
+					/>
+				</Link>)}
 		</S.Wrapper>
 	)
 
