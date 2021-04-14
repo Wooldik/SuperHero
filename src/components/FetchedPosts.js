@@ -5,14 +5,13 @@ import { fetchHeros } from '../redux/actions'
 import { Loader } from './Loader'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-
+import { getHeros, onLoading } from '../redux/selectors'
 export default () => {
 	const dispatch = useDispatch()
-	const posts = useSelector(state => state.posts.fetchedHeros)
-	const loading = useSelector(state => state.app.loading)
+	const posts = useSelector(getHeros)
+	const loading = useSelector(onLoading)
 
 	if (loading) {
-
 		return <Loader />
 	}
 

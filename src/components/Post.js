@@ -6,10 +6,7 @@ import styled from 'styled-components'
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ({ post }) => {
 
-
-
 	return (
-
 		<S.WraperCard >
 			<img src={post.image.url} alt="..."></img>
 			<h3 >{post.name}</h3>
