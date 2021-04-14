@@ -1,3 +1,4 @@
-export const constants = {
-
+export const routes = {
+	mainpage: '/',
+	card: '/card/:id'
 }
