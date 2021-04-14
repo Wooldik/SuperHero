@@ -5,9 +5,7 @@ import styled from 'styled-components'
 function Card({ data }) {
 
 	return (
-		<div>
-			{data.name}
-		</div>
+		<div>{data.name}</div>
 	)
 }
 
