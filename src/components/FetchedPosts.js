@@ -5,10 +5,10 @@ import { Loader } from "./Loader";
 import { S } from "./styledComponents";
 import { Link } from "react-router-dom";
 import { getHeros, onLoading } from "../redux/selectors";
-import { routes } from "../constants";
+import { routes,LITERALS } from "../constants";
 import { requestHerosAction } from "../redux/actions";
 
-export default () => {
+export default function FetchedPosts  ()  {
 	const dispatch = useDispatch();
 	const posts = useSelector(getHeros);
 	const loading = useSelector(onLoading);
@@ -20,7 +20,7 @@ export default () => {
 	}
 
 	return (<>
-	<h2>Super Hero</h2>
+	<h2>{LITERALS.SUPER_HEROS}</h2>
 		<S.Wrapper>
 			{posts.map(post =>
 				<Link to={{ pathname: routes.linkCardId(post), state: post }} key={post.id}>
@@ -30,6 +30,6 @@ export default () => {
 		</>
 	);
 
-};
+}
 
 

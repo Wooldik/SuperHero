@@ -11,3 +11,8 @@ export const classNameBootstrap = {
 	fixed: "sr-only",
 	buttonLighte: "btn btn-light"
 };
+
+export const LITERALS = {
+	SUPER_HEROS: "Super Heros",
+
+};
