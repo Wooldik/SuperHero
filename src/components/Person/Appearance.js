@@ -1,5 +1,5 @@
-import React from 'react'
-import { S } from '../styledComponents'
+import React from "react";
+import { S } from "../styledComponents";
 
 const Appearance = ({appearance}) =>{
    return (
@@ -16,7 +16,7 @@ const Appearance = ({appearance}) =>{
          <p>Height: {appearance.height[1]}</p>
          <p>Weight: {appearance.weight[1]}</p>
       </S.AppearanceDiv>
-   </S.Wrapper>)
-}
+   </S.Wrapper>);
+};
 
-export default Appearance
+export default Appearance;

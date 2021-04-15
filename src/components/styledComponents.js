@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 
 export const S = {
@@ -58,4 +58,4 @@ export const S = {
 		}
 	`,
 
-}
+};

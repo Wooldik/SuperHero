@@ -1,15 +1,15 @@
-import React from 'react'
-import { useHistory } from 'react-router'
-import { classNameBootstrap, routes } from '../constants'
-import Appearance from './Person/Appearance';
-import { S } from './styledComponents';
+import React from "react";
+import { useHistory } from "react-router";
+import { classNameBootstrap, routes } from "../constants";
+import Appearance from "./Person/Appearance";
+import { S } from "./styledComponents";
 
 function Card({ data }) {
 
 	const history = useHistory();
 	console.log(data);
 	function backHandler () {
-		history.push(routes.mainpage)
+		history.push(routes.mainpage);
 	}
 	return (<S.M10>
 		<button 
@@ -27,7 +27,7 @@ function Card({ data }) {
 				<Appearance appearance={data.appearance}/>
 			</S.Biograph>
 		</S.Wrapper>
-	</S.M10>)
+	</S.M10>);
 }
 
-export default Card
+export default Card;

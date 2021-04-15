@@ -1,22 +1,22 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import Post from './Post'
-import { Loader } from './Loader'
-import { S } from './styledComponents'
-import { Link } from 'react-router-dom'
-import { getHeros, onLoading } from '../redux/selectors'
-import { routes } from '../constants'
-import { requestHerosAction } from '../redux/actions'
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Post from "./Post";
+import { Loader } from "./Loader";
+import { S } from "./styledComponents";
+import { Link } from "react-router-dom";
+import { getHeros, onLoading } from "../redux/selectors";
+import { routes } from "../constants";
+import { requestHerosAction } from "../redux/actions";
 
 export default () => {
-	const dispatch = useDispatch()
-	const posts = useSelector(getHeros)
-	const loading = useSelector(onLoading)
+	const dispatch = useDispatch();
+	const posts = useSelector(getHeros);
+	const loading = useSelector(onLoading);
 
-	if (loading) { return <Loader /> }
+	if (loading) { return <Loader />; }
 
 	if (!posts.length) {
-		dispatch(requestHerosAction())
+		dispatch(requestHerosAction());
 	}
 
 	return (<>
@@ -28,8 +28,8 @@ export default () => {
 				</Link>)}
 		</S.Wrapper>
 		</>
-	)
+	);
 
-}
+};
 
 
