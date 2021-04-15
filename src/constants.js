@@ -3,13 +3,11 @@
 export const routes = {
 	mainpage: '/',
 	card: '/card/:id',
-	linkCardId: (post) => {
-		return `/card/${post.id}`
-	}
-
+	linkCardId: (post) => `/card/${post.id}`
 }
 
 export const classNameBootstrap = {
 	spinner: "spinner-border text-danger",
-	fixed: "sr-only"
+	fixed: "sr-only",
+	buttonLighte: "btn btn-light"
 }

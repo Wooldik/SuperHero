@@ -19,13 +19,15 @@ export default () => {
 		dispatch(requestHerosAction())
 	}
 
-	return (
+	return (<>
+	<h2>Super Hero</h2>
 		<S.Wrapper>
 			{posts.map(post =>
 				<Link to={{ pathname: routes.linkCardId(post), state: post }} key={post.id}>
 					<Post post={post} />
 				</Link>)}
 		</S.Wrapper>
+		</>
 	)
 
 }

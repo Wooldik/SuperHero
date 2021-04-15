@@ -9,7 +9,6 @@ function App() {
 	return (
 		<div>
 			<BrowserRouter>
-				<h2>Super Heroes</h2>
 				<Route exact path={routes.mainpage} component={FetchedPosts} />
 				<Route path={routes.card} render={({ location }) => {
 					return <Card data={location.state} />
