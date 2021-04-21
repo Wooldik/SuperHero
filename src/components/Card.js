@@ -26,7 +26,7 @@ function Card({ data }) {
 			</S.ImageFullHeight>
 			<S.Biograph>
 				<h2>{data.name}</h2>
-				<Appearance appearance={data.appearance} />
+				<Appearance appearance={data.appearance} powerstats={data.powerstats} biography={data.biography} />
 			</S.Biograph>
 		</S.Wrapper>
 	</S.M10>);
