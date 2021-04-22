@@ -15,22 +15,22 @@ import "./index.css";
 const saga = createSagaMiddleware();
 
 const store = createStore(rootReducer, compose(
-	applyMiddleware(
-		thunk, saga
-	),
-	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    applyMiddleware(
+        thunk, saga
+    ),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 ));
 
 saga.run(sagaWatcher);
 
 const app = (
 
-	<Provider store={store}>
-		<BrowserRouter>
-			<App />
-		</BrowserRouter>
+    <Provider store={store}>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
 
-	</Provider>
+    </Provider>
 );
 
 render(app, document.getElementById("root"));

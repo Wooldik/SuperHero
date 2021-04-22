@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 export const S = {
-	Wrapper: styled.div`
+    Wrapper: styled.div`
 	display:flex;
 	justify-content:${props => props.primary ? "space-around" : "space-between"};
 	flex-wrap:wrap;
@@ -10,7 +10,7 @@ export const S = {
 	
 	
 	`,
-	WraperCard: styled.div`
+    WraperCard: styled.div`
 	width: 300px;
 	height:400px;
 	border: 1px solid #000;
@@ -31,7 +31,7 @@ export const S = {
 }
   
  `,
-	ImageFullHeight: styled.div`
+    ImageFullHeight: styled.div`
 		background-size: cover;
 		height: 550px;
 		border: 2px solid #fff;
@@ -42,17 +42,17 @@ export const S = {
 			border-radius: 10px;
 		}
 	`,
-	M10: styled.div`
+    M10: styled.div`
 		margin:10px;
 	`,
-	Biograph: styled.div`
+    Biograph: styled.div`
 		padding-left:10px;
 		flex-grow:2;
 		& h2{
 			text-align:center;
 		}
 	`,
-	AppearanceDiv:styled.div`
+    AppearanceDiv:styled.div`
 		& p {
 			margin-bottom: .5rem;
 		}

@@ -8,27 +8,27 @@ import { getHeros, onLoading } from "../redux/selectors";
 import { routes,LITERALS } from "../constants";
 import { requestHerosAction } from "../redux/actions";
 
-export default function FetchedPosts  ()  {
-	const dispatch = useDispatch();
-	const posts = useSelector(getHeros);
-	const loading = useSelector(onLoading);
+export default function FetchedPosts () {
+    const dispatch = useDispatch();
+    const posts = useSelector(getHeros);
+    const loading = useSelector(onLoading);
 
-	if (loading) { return <Loader />; }
+    if (loading) { return <Loader />; }
 
-	if (!posts.length) {
-		dispatch(requestHerosAction());
-	}
+    if (!posts.length) {
+        dispatch(requestHerosAction());
+    }
 
-	return (<>
-	<h2>{LITERALS.SUPER_HEROS}</h2>
-		<S.Wrapper>
-			{posts.map(post =>
-				<Link to={{ pathname: routes.linkCardId(post), state: post }} key={post.id}>
-					<Post post={post} />
-				</Link>)}
-		</S.Wrapper>
-		</>
-	);
+    return (<>
+        <h2>{LITERALS.SUPER_HEROS}</h2>
+        <S.Wrapper>
+            {posts.map(post =>
+                <Link to={{ pathname: routes.linkCardId(post), state: post }} key={post.id}>
+                    <Post post={post} />
+                </Link>)}
+        </S.Wrapper>
+    </>
+    );
 
 }
 

@@ -6,17 +6,17 @@ import { routes } from "./constants";
 
 function App() {
 
-	return (
-		<div>
-			<BrowserRouter>
-				<Route exact path={routes.mainpage} component={FetchedPosts} />
-				<Route path={routes.card} render={({ location }) => {
-					return <Card data={location.state} />;
-				}} />
-			</BrowserRouter>
+    return (
+        <div>
+            <BrowserRouter>
+                <Route exact path={routes.mainpage} component={FetchedPosts} />
+                <Route path={routes.card} render={({ location }) => {
+                    return <Card data={location.state} />;
+                }} />
+            </BrowserRouter>
 
-		</div>
-	);
+        </div>
+    );
 }
 
 export default App;

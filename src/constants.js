@@ -1,18 +1,18 @@
 
 
 export const routes = {
-	mainpage: "/",
-	card: "/card/:id",
-	linkCardId: (post) => `/card/${post.id}`
+    mainpage: "/",
+    card: "/card/:id",
+    linkCardId: (post) => `/card/${post.id}`
 };
 
 export const classNameBootstrap = {
-	spinner: "spinner-border text-danger",
-	fixed: "sr-only",
-	buttonLighte: "btn btn-light"
+    spinner: "spinner-border text-danger",
+    fixed: "sr-only",
+    buttonLighte: "btn btn-light"
 };
 
 export const LITERALS = {
-	SUPER_HEROS: "Super Heros",
+    SUPER_HEROS: "Super Heros",
 
 };
