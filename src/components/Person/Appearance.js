@@ -2,33 +2,49 @@
 import React from "react";
 import { S } from "../styledComponents";
 
-function Appearance({ appearance, powerstats, biography }) {
-    console.log(biography);
-    return (
-        <S.Wrapper primary>
+function Appearance({ appearance, powerstats, biography,connections,work }) {
+    console.log(biography.aliases);
+    return (<>
+        <S.Wrapper>
             <S.AppearanceDiv>
-                <p>Gender: {appearance.gender}</p>
-                <p>Race: {appearance.race}</p>
-                <p>Height: {appearance.height[1]}</p>
-                <p>Weight: {appearance.weight[1]}</p>
+                <p><S.Color>Gender</S.Color>: {appearance.gender}</p>
+                <p><S.Color>Race</S.Color>: {appearance.race}</p>
+                <p><S.Color>Height</S.Color>: {appearance.height[1]}</p>
+                <p><S.Color>Weight</S.Color>: {appearance.weight[1]}</p>
             </S.AppearanceDiv>
             <S.AppearanceDiv>
-                <p>Intelligence: {powerstats.intelligence}</p>
-                <p>Strength: {powerstats.strength}</p>
-                <p>Speed: {powerstats.speed}</p>
-                <p>Durability: {powerstats.durability}</p>
-                <p>Power: {powerstats.power}</p>
-                <p>Combat: {powerstats.combat}</p>
+                <p><S.Color>Intelligence</S.Color>: {powerstats.intelligence}</p>
+                <p><S.Color>Strength</S.Color>: {powerstats.strength}</p>
+                <p><S.Color>Speed</S.Color>: {powerstats.speed}</p>
+                <p><S.Color>Durability</S.Color>: {powerstats.durability}</p>
+                <p><S.Color>Power</S.Color>: {powerstats.power}</p>
+                <p><S.Color>Combat</S.Color>: {powerstats.combat}</p>
             </S.AppearanceDiv>
-            <S.AppearanceDiv>
-                <p>Full-name: {biography["full-name"]}</p>
-                <p>Alter-egos: {biography["alter-egos"]}</p>
-                <p>Aliases: {biography.aliases[1]}</p>
-                <p>Place-of-birth: {biography["place-of-birth"]}</p>
-                <p>Publisher: {biography.publisher}</p>
-                <p>Alignment: {biography.alignment}</p>
+            
+            <S.AppearanceDiv >
+                <p><S.Color>Full-name</S.Color>: {biography["full-name"]}</p>
+                <p><S.Color>Alter-egos</S.Color>: {biography["alter-egos"]}</p>
+                <p><S.Color>Aliases</S.Color>: {biography.aliases[0]}</p>
+                <p><S.Color>Place-of-birth</S.Color>: {biography["place-of-birth"]}</p>
+                <p><S.Color>Publisher</S.Color>: {biography.publisher}</p>
+                <p><S.Color>Alignment</S.Color>: {biography.alignment}</p>
+            </S.AppearanceDiv>    
+        </S.Wrapper>
+        <S.Wrapper>
+            <S.AppearanceDiv primary>
+                <h4>Work</h4>
+                <p><S.Color>Occupation</S.Color>: {work.occupation}</p>
+                <p><S.Color>Base</S.Color>: {work.base}</p>          
             </S.AppearanceDiv>
-        </S.Wrapper>);
+        </S.Wrapper>
+        <S.Wrapper>
+            <S.AppearanceDiv >
+                <h4>Connections</h4>
+                <p><S.Color>Group-affiliation</S.Color>: {connections["group-affiliation"]}</p>
+                <p><S.Color>Relatives</S.Color>: {connections["relatives"]}</p>          
+            </S.AppearanceDiv>
+        </S.Wrapper>
+    </>);
 }
 
 export default Appearance;

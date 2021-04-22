@@ -5,9 +5,8 @@ export const S = {
     Wrapper: styled.div`
 	display:flex;
 	justify-content:${props => props.primary ? "space-around" : "space-between"};
-	flex-wrap:wrap;
 	margin-top: 20px;
-	
+	flex-wrap:wrap;
 	
 	`,
     WraperCard: styled.div`
@@ -33,12 +32,12 @@ export const S = {
  `,
     ImageFullHeight: styled.div`
 		background-size: cover;
-		height: 550px;
+		max-width: 450px;
 		border: 2px solid #fff;
 		border-radius: 10px;
 		
 		& img{
-			height: 100%;
+			max-width: 100%;
 			border-radius: 10px;
 		}
 	`,
@@ -49,13 +48,23 @@ export const S = {
 		padding-left:10px;
 		flex-grow:2;
 		& h2{
+			margin-top:20px;
 			text-align:center;
 		}
 	`,
     AppearanceDiv:styled.div`
+	 flex-wrap:wrap;
+	 margin-top: 20px;
+	 border-radius: 10px;
+    border: 2px solid;
+    max-width: ${props => props.primary ? "none" : "850px"};
+    padding: 20px;
 		& p {
 			margin-bottom: .5rem;
 		}
 	`,
+    Color:styled.span`
+	color:#e6e600;
+	`
 
 };

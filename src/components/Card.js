@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 /* eslint-disable react/prop-types */
 import React from "react";
 import { useHistory } from "react-router";
@@ -26,7 +27,13 @@ function Card({ data }) {
             </S.ImageFullHeight>
             <S.Biograph>
                 <h2>{data.name}</h2>
-                <Appearance appearance={data.appearance} powerstats={data.powerstats} biography={data.biography} />
+                <Appearance 
+					 appearance={data.appearance} 
+					 powerstats={data.powerstats} 
+					 biography={data.biography}
+					 work={data.work}
+					 connections={data.connections}
+					  />
             </S.Biograph>
         </S.Wrapper>
     </S.M10>);
